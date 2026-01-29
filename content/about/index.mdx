@@ -13,7 +13,7 @@ import {CanopyDiagram} from "@canopy-iiif/app/ui/server";
 
 # About
 
-Public transit is important to daily life, especially in major cities. How does the development of [public transit] (https://api.dc.library.northwestern.edu/api/v2/works/6ea882b2-5f5e-4e2a-9124-2ef215a46d18?as=iiif) impact people wihin these communities? What are the benefits? What are the drawbacks? 
+Public transit is important to daily life, especially in major cities. How does the development of [public transit](https://tilliefreed2028.github.io/Tillie-s-Practice-Canopy-/works/new-york-broadway-plaza-proposed-pedestrian-transi.html) impact people wihin these communities? What are the benefits? What are the drawbacks? 
 
 ## Overview
 
@@ -30,39 +30,40 @@ A team is tasked with building out a unified digital project for these items tha
 Comprehensive [documentation](https://canopy-iiif.github.io/app/docs/) is integrated into the application and serves as both a development guide and a demonstration of Canopy's potential for digital scholarship and humanities projects. To highlight what Canopy can do, this paragraph is authored in markdown from [a simple text file](https://github.com/canopy-iiif/template/blob/main/content/about/index.mdx?plain=1) and below is an example of an `<Image>` component rendering a IIIF image resource along with an inline annotation and caption. This same image is provided by Northwestern University Libraries as a [IIIF Manifest](https://api.dc.library.northwestern.edu/api/v2/works/4bdb5a22-6c7f-498d-8e6e-e49ea9bc4778?as=iiif) from their [Digital Collections platform](https://dc.library.northwestern.edu/items/4bdb5a22-6c7f-498d-8e6e-e49ea9bc4778) and [aggregated into this project](https://canopy-iiif.github.io/app/works/the-town-and-pass-of-boondi-in-rajpootana.html) as a static page during the Canopy build process.
 
 <Image
-  src="https://iiif.dc.library.northwestern.edu/iiif/3/138a94b0-175a-4152-98c7-df58661ce7d5"
+  src="https://iiif.dc.library.northwestern.edu/iiif/3/85b4ade8-6837-44bc-bbda-e8cd3b806049"
   isTiledImage={true}
   height="500px"
-  alt="Painting of the The town & pass of Boondi, in Rajpootana"
-  caption="The town & pass of Boondi, in Rajpootana - Situated on a southern slope of a hill at the end of a long range, the town of Boondi was the capital of the Rajput principality of that name. The palace of the Raja is a large masonry stone building about half way up the hill, according to Grindlay, with a kind of fortification extending to the top."
+  alt="EIS Document Page"
+  caption="Environmental Impact Statement, Metropolitan Atlanta Rapid Transit System (Canvas 1)"
   annotations={[
-        {
-          annotation: {
-            id: "https://iiif.dc.library.northwestern.edu/iiif/3/f7409acd-e3f9-496a-b733-81f46d4ffa4f/annotation/0",
-            type: "Annotation",
-            motivation: ["tagging"],
-            body: [
-              {
-                id: "https://iiif.dc.library.northwestern.edu/iiif/3/f7409acd-e3f9-496a-b733-81f46d4ffa4f/annotation/0/body/0",
-                type: "TextualBody",
-                value: "Five individuals traveling.",
-              },
-            ],
-            target: {
-              type: "SpecificResource",
-              source: {
-                id: "https://iiif.dc.library.northwestern.edu/iiif/3/f7409acd-e3f9-496a-b733-81f46d4ffa4f/canvas/1",
-                type: "Canvas",
-              },
-              selector: {
-                type: "FragmentSelector",
-                value: "xywh=1900,4050,1500,1000",
-              },
-            },
+    {
+      annotation: {
+        id: "https://your-site.edu/annotations/29b89810-canvas1-0",
+        type: "Annotation",
+        motivation: ["tagging"],
+        body: [
+          {
+            type: "TextualBody",
+            value: "Example annotation on page 1",
           },
-          targetIndex: 0,
-        }
-      ]}
+        ],
+        target: {
+          type: "SpecificResource",
+          source: {
+            id: "https://api.dc.library.northwestern.edu/api/v2/works/29b89810-6b04-4796-82dc-a0080bab8942?as=iiif/canvas/1",
+            type: "Canvas",
+          },
+          selector: {
+            type: "FragmentSelector",
+            value: "xywh=500,500,800,800",
+          },
+        },
+      },
+      targetIndex: 0,
+    },
+  ]}
+/>
+
 
 />
 
