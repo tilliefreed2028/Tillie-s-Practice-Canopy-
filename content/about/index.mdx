@@ -19,6 +19,18 @@ Public transit is important to daily life, especially in major cities. How does 
 
 WOW THIS IS SO COOL!!!!!!!!!!!
 
+
+from codecarbon import EmissionsTracker
+import subprocess
+
+tracker = EmissionsTracker(project_name="canopy-site-build")
+tracker.start()
+
+subprocess.run(["npm", "run", "build"])
+
+tracker.stop()
+
+
 - _30 manifests_ of manuscripts from **Collection A**;
 - _15 manifests_ of portraits from **Collection B**;
 - and _5 manifests_ of scrapbooks sourced **directly** and not part of structured collection.
