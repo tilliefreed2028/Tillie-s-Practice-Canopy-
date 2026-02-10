@@ -59,3 +59,4 @@ graph.addEdge("A", "C", { size: 2 });
 // 4. Render
 const container = document.getElementById("sigma-container");
 const renderer = new Sigma(graph, container);
+
