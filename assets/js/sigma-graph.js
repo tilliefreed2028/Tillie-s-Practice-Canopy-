@@ -1,3 +1,6 @@
+import Graph from "graphology";
+import Sigma from "sigma";
+
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("graph-container");
 
@@ -23,6 +26,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
 import Graph from "graphology";
 import Sigma from "sigma";
+
+const graph = new Graph();
+
+// Add nodes
+graph.addNode("a", {
+  label: "Node A",
+  x: 0,
+  y: 0,
+  size: 10,
+  color: "#E74C3C",
+});
+
+graph.addNode("b", {
+  label: "Node B",
+  x: 1,
+  y: 1,
+  size: 10,
+  color: "#3498DB",
+});
+
+// Add edge
+graph.addEdge("a", "b");
+
+// Render
+const container = document.getElementById("graph-container");
+const renderer = new Sigma(graph, container);
+
 
 // 1. Create a graph
 const graph = new Graph();
