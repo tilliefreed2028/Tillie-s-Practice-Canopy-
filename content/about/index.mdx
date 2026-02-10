@@ -20,15 +20,11 @@ Public transit is important to daily life, especially in major cities. How does 
 WOW THIS IS SO COOL!!!!!!!!!!!
 
 
-from codecarbon import EmissionsTracker
-import subprocess
+<div
+  id="graph-container"
+  style={{ width: "100%", height: "600px", border: "1px solid #ccc" }}
+></div>
 
-tracker = EmissionsTracker(project_name="canopy-site-build")
-tracker.start()
-
-subprocess.run(["npm", "run", "build"])
-
-tracker.stop()
 
 
 - _30 manifests_ of manuscripts from **Collection A**;
