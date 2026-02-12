@@ -1,6 +1,6 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const container = document.getElementById("sigma-container");
-  if (!container) return;
+// document.addEventListener("DOMContentLoaded", function () {
+ // const container = document.getElementById("sigma-container");
+  // if (!container) return;
 
   const Graph = window.graphology.Graph;
   const Sigma = window.sigma.Sigma;
