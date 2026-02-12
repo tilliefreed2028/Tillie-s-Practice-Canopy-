@@ -6,81 +6,61 @@ referencedManifests:
   - https://api.dc.library.northwestern.edu/api/v2/works/4bdb5a22-6c7f-498d-8e6e-e49ea9bc4778?as=iiif
   - https://api.dc.library.northwestern.edu/api/v2/works/c26591b2-994b-4ba3-a87e-9124419fa91b?as=iiif
   - https://api.dc.library.northwestern.edu/api/v2/works/d4c62d7f-f50d-4b29-85e0-5d380675bec7?as=iiif
-canonical: https://canopy-iiif.github.io/app/about/index.html
 ---
 
 import {CanopyDiagram} from "@canopy-iiif/app/ui/server";
 
 # About
 
-Public transit is important to daily life, especially in major cities. How does the development of [public transit](https://tilliefreed2028.github.io/Tillie-s-Practice-Canopy-/works/new-york-broadway-plaza-proposed-pedestrian-transi.html) impact people wihin these communities? What are the benefits? What are the drawbacks? 
+Public transit is important to daily life, especially in major cities. How does the development of [public transit](https://tilliefreed2028.github.io/Tillie-s-Practice-Canopy-/works/new-york-broadway-plaza-proposed-pedestrian-transi.html) impact people within these communities? What are the benefits? What are the drawbacks? 
 
 ## Overview
 
 WOW THIS IS SO COOL!!!!!!!!!!!
 
+---
+
+## Sigma Test Visualization
+
+<div id="sigma-container" style="width:600px;height:400px;border:1px solid #ccc;"></div>
+
 <script src="https://unpkg.com/sigma@2/build/sigma.min.js"></script>
-<script src="sigma-graph.js"></script>
 
-<div id="sigma-container" style="width: 600px; height: 400px;"></div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const container = document.getElementById("sigma-container");
 
+  if (!container || typeof sigma === "undefined") {
+    console.log("Sigma failed to load");
+    return;
+  }
 
+  const graph = {
+    nodes: [
+      { id: "n0", label: "Node 1", x: 0, y: 0, size: 10, color: "#ff0000" },
+      { id: "n1", label: "Node 2", x: 1, y: 1, size: 10, color: "#0000ff" }
+    ],
+    edges: [
+      { id: "e0", source: "n0", target: "n1" }
+    ]
+  };
 
+  new sigma.Sigma(graph, container);
+});
+</script>
 
-
-<script src="https://unpkg.com/sigma/build/sigma.min.js"></script>
-<script src="/js/sigma-graph.js"></script>
-
+---
 
 - _30 manifests_ of manuscripts from **Collection A**;
 - _15 manifests_ of portraits from **Collection B**;
 - and _5 manifests_ of scrapbooks sourced **directly** and not part of structured collection.
 
-A team is tasked with building out a unified digital project for these items that allows users to browse their content, as well as interact with contextual essays, timelines, and maps. By using Canopy, implementers can quickly stand-up a working project with every manifest becoming its own work page, authored Markdown files providing context, and both streams feeding a shared search index before everything is written out to static HTML, CSS, and data assets. The diagram below walks through that pipeline so you can see how these raw manifests become a ready-to-host digital project.
+A team is tasked with building out a unified digital project for these items that allows users to browse their content, as well as interact with contextual essays, timelines, and maps. By using Canopy, implementers can quickly stand-up a working project with every manifest becoming its own work page, authored Markdown files providing context, and both streams feeding a shared search index before everything is written out to static HTML, CSS, and data assets.
 
 <CanopyDiagram />
 
-Comprehensive [documentation](https://canopy-iiif.github.io/app/docs/) is integrated into the application and serves as both a development guide and a demonstration of Canopy's potential for digital scholarship and humanities projects. To highlight what Canopy can do, this paragraph is authored in markdown from [a simple text file](https://github.com/canopy-iiif/template/blob/main/content/about/index.mdx?plain=1) and below is an example of an `<Image>` component rendering a IIIF image resource along with an inline annotation and caption. This same image is provided by Northwestern University Libraries as a [IIIF Manifest](https://api.dc.library.northwestern.edu/api/v2/works/4bdb5a22-6c7f-498d-8e6e-e49ea9bc4778?as=iiif) from their [Digital Collections platform](https://dc.library.northwestern.edu/items/4bdb5a22-6c7f-498d-8e6e-e49ea9bc4778) and [aggregated into this project](https://canopy-iiif.github.io/app/works/the-town-and-pass-of-boondi-in-rajpootana.html) as a static page during the Canopy build process.
+<ReferencedItems />
 
-<Image
-  src="https://iiif.dc.library.northwestern.edu/iiif/3/85b4ade8-6837-44bc-bbda-e8cd3b806049"
-  isTiledImage={true}
-  height="500px"
-  alt="EIS Document Page"
-  caption="Environmental Impact Statement, Metropolitan Atlanta Rapid Transit System (Canvas 1)"
-  annotations={[
-    {
-      annotation: {
-        id: "https://your-site.edu/annotations/29b89810-canvas1-0",
-        type: "Annotation",
-        motivation: ["tagging"],
-        body: [
-          {
-            type: "TextualBody",
-            value: "Example annotation on page 1",
-          },
-        ],
-        target: {
-          type: "SpecificResource",
-          source: {
-            id: "https://api.dc.library.northwestern.edu/api/v2/works/29b89810-6b04-4796-82dc-a0080bab8942?as=iiif/canvas/1",
-            type: "Canvas",
-          },
-          selector: {
-            type: "FragmentSelector",
-            value: "xywh=500,500,800,800",
-          },
-        },
-      },
-      targetIndex: 0,
-    },
-  ]}
-/>
-
-
-/>
-
-As authors create content using Markdown, they can reference the source material directly within the text using the `<ReferencedItems />` component below. This component dynamically generates a list of all IIIF Manifests that have been explicitly referenced within the markdown content of the page.
 
 <ReferencedItems />
 
