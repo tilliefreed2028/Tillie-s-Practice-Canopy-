@@ -20,32 +20,9 @@ Public transit is important to daily life, especially in major cities. How does 
 WOW THIS IS SO COOL!!!!!!!!!!!
 
 
-import { useEffect, useRef } from "react";
-import { renderGraph } from "./sigma-graph";
-
-export default function GraphWrapper() {
-  const ref = useRef(null);
-
-  useEffect(() => {
-    if (ref.current) {
-      renderGraph(ref.current);
-    }
-  }, []);
-
-  return (
-    <div
-      ref={ref}
-      style={{ height: "500px", background: "red" }}
-    />
-  );
-}
 
 
 
-
-
-<script src="https://unpkg.com/sigma/build/sigma.min.js"></script>
-<script src="/js/sigma-graph.js"></script>
 
 
 
