@@ -1,12 +1,6 @@
-document.addEventListener("DOMContentLoaded", async function () {
+document.addEventListener("DOMContentLoaded", function () {
   const container = document.getElementById("sigma-container");
   if (!container) return;
-
-  // Ensure graphology + sigma are loaded
-  if (!window.graphology || !window.sigma) {
-    console.error("Sigma or Graphology not loaded.");
-    return;
-  }
 
   const Graph = window.graphology.Graph;
   const Sigma = window.sigma.Sigma;
