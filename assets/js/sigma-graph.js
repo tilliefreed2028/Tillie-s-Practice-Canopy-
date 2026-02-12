@@ -1,16 +1,35 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
   const container = document.getElementById("sigma-container");
+  if (!container) return;
 
-  const graph = {
-    nodes: [
-      { id: "n0", label: "Node 1", x: 0, y: 0, size: 10, color: "#ff0000" },
-      { id: "n1", label: "Node 2", x: 1, y: 1, size: 10, color: "#0000ff" }
-    ],
-    edges: [
-      { id: "e0", source: "n0", target: "n1" }
-    ]
-  };
+  // Ensure graphology + sigma are loaded
+  if (!window.graphology || !window.sigma) {
+    console.error("Sigma or Graphology not loaded.");
+    return;
+  }
 
-  new sigma.Sigma(graph, container);
+  const Graph = window.graphology.Graph;
+  const Sigma = window.sigma.Sigma;
+
+  const graph = new Graph();
+
+  graph.addNode("n0", {
+    label: "Node 1",
+    x: 0,
+    y: 0,
+    size: 12,
+    color: "#ff0000",
+  });
+
+  graph.addNode("n1", {
+    label: "Node 2",
+    x: 1,
+    y: 1,
+    size: 12,
+    color: "#0000ff",
+  });
+
+  graph.addEdge("n0", "n1");
+
+  new Sigma(graph, container);
 });
-
