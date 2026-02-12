@@ -25,10 +25,7 @@
 
   graph.addEdge("n0", "n1");
 
-  new Sigma(graph, container);
-
 // Render
-const container = document.getElementById("graph-container");
-const renderer = new Sigma(graph, container);
+new Sigma(graph, container);
 
 });
